@@ -6,7 +6,7 @@ class CalculatorClass:
         self.operator = oper
 
     def setOperator(self, oper):
-        print ("setting operator to " + str(oper))
+        # print ("setting operator to " + str(oper))
         self.operator = oper
 
     def runOperation(self):
