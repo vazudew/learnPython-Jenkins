@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Result</title></head>
+<body>
+
+  <h1>Python Calculator Web Application</h1>
+  <p>Demonstrating CI/CD with Jenkins</p>
+  <img src="/static/python.png" alt="logo" style='height: 20%; width: 20%; object-fit: contain' >
+
+  <br>
+  <br>
+  <label for="Item1Input">Item 1 </label> <input id="item1input" type="text" size="15" name="item1input" value={{item1}}
+                                                 disabled />
+  <br>
+  <br>
+  <label for="Item2Input">Item 2 </label> <input id="item2input" type="text" size="15" name="item2input" value={{item2}}
+  disabled/>
+  <br>
+  <br>
+  <label for="OperInp">Operator </label>
+  <input id="operator" type="text" size="15" name="item2input" value={{oper}} disabled />
+  <br>
+  <br>
+  <label for="result">RESULT </label> <input id="result" type="text" size="15" name="result" value={{result}}
+  disabled/>
+
+<br>
+<br>
+  <form action="{{ url_for('static', filename='index.html') }}">
+<p><input type = "submit" value = "Reset" /></p>
+</form>
+
+</body>
+</html>
