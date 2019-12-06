@@ -3,7 +3,6 @@
 pipeline {
 agent { 
 		docker { image 'python:3.7.2' 
-		args '-v $HOME:/var/lib/jenkins/workspace/webapp -w /var/lib/jenkins/workspace/webapp -u root'
 		} 
 	}
 		options {
