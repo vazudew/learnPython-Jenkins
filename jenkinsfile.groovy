@@ -1,22 +1,15 @@
 #!/usr/bin/env groovy
 
 pipeline {
-agent { 
-		docker { image 'python:3.7.2' 
-		} 
-	}
-		options {
-		skipStagesAfterUnstable()
-	}
+agent any
 	stages {
 		stage('checkout') {
 				steps {
-					sh 'echo "checkout step here"'
-					sh 'echo "remove older content"'
-					sh 'rm -rf /var/lib/jenkins/workspace/webapp'
+					sh 'echo "checkout the code here "'
+					sh 'echo "remove older content from directory"'
+					sh 'pwd'
+					sh 'sudo rm -rf *'
 					sh 'echo "create working directory again"'
-					sh 'mkdir /var/lib/jenkins/workspace/webapp'
-					dir(path: '/var/lib/jenkins/workspace/webapp')
 					sh 'echo "ensure empty folder"'
 					sh 'ls -la'
 					sh 'echo "execute git clone and check the folder"'
@@ -38,8 +31,6 @@ agent {
 		stage('Deploy') {
 				steps {
 					sh 'echo "Deploy phase"'
-					sh 'docker stop $(docker ps -a -q)'
-					sh 'docker rm $(docker ps -a -q)'
 			 }
 		}
 	}
