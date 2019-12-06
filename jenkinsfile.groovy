@@ -8,7 +8,7 @@ agent any
 					sh 'echo "checkout the code here "'
 					sh 'echo "remove older content from directory"'
 					sh 'pwd'
-					sh 'sudo rm -rf *'
+					cleanWs()
 					sh 'echo "create working directory again"'
 					sh 'echo "ensure empty folder"'
 					sh 'ls -la'
