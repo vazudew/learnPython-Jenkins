@@ -15,6 +15,7 @@ agent { docker { image 'python:3.7.2' } }
 		stage('Test') {
 				steps {
 					sh 'echo "Test Phase"'
+					sh 'pwd'
 					sh 'ls -la'
 					sh 'uname -a'
 					sh 'ifconfig '
