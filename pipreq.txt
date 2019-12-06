@@ -1,0 +1,6 @@
+Click
+Flask
+Jinja2
+MarkupSafe
+Werkzeug
+xmlrunner
