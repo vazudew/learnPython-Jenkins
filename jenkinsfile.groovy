@@ -9,25 +9,21 @@ agent { docker { image 'python:3.7.2' } }
 		stage('checkout') {
 				steps {
 					sh 'echo "checkout step here"'
-					sh 'echo $USER '
+					git credentialsId: '7776e9c9-9379-45e6-a4fd-f97d834f1dda', url: 'https://github.com/vazudew/jenkins_setup.git'
 			 }
 		}
-
-		stage('Build') {
-				steps {
-					sh 'echo "Build phase"'
-				}
-		}
-
 		stage('Test') {
 				steps {
 					sh 'echo "Test Phase"'
+					sh 'python CalculatorTest.py'
 				}
 			}
 
 		stage('Deploy') {
 				steps {
-					sh 'echo "deploy"'
+					sh 'echo "Deploy phase"'
+					sh 'docker stop $(docker ps -a -q)'
+					sh 'docker rm $(docker ps -a -q)'
 			 }
 		}
 	}
