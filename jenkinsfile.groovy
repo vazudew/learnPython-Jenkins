@@ -25,8 +25,7 @@ agent any
 		stage('Deploy') {
 				steps {
 					sh 'echo "Deploy phase"'
-					sh 'ssh jenkins@3.125.118.211 sudo rm -rf /var/www/html/webapp'
-					sh 'ssh jenkins@3.125.118.211 sudo mkdir /var/www/html/webapp'
+					sh '/var/lib/jenkins/script-self/exp1.sh'
 			 }
 		}
 	}
