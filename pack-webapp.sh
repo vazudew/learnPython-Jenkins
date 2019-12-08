@@ -12,5 +12,5 @@ cp  CalculatorFlask.py $webapp/.
 cp CalculatorClass.py $webapp/.
 cp pipreq.txt $webapp/.
 cp README.md $webapp/.
-ls -la $webapp
+ls -lRa $webapp
 
