@@ -27,10 +27,12 @@ agent any
 				steps {
 					sh 'echo "Deploy phase"'
 					sh 'echo "create webapp packer"'
-					sh 'sudo ./var/lib/jenkins/workspace/webapp/pack-webapp.sh'
+					sh 'sudo chmod 0755 pack-webapp.sh'
+					sh 'sudo chmod 0755 sshexpects.sh'
+					sh './pack-webapp.sh'
 					sh 'echo "try to ssh into deployment server"'
 					sh 'set'
-					sh 'sudo ./var/lib/jenkins/workspace/webapp/sshexpects.sh'
+					sh './sshexpects.sh'
 			 }
 		}
 	}
