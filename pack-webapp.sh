@@ -1,13 +1,15 @@
 #!/usr/bin/bash
 
+webapp="calap"
+
 echo "remove older artefacts if exist"
-rm -rf webapp
+rm -rf $webapp
 echo "create folder structure and populate content"
-mkdir webapp
-cp -rf static webapp/.
-cp -rf templates webapp/.
-cp  CalculatorFlask.py webapp/.
-cp CalculatorClass.py webapp/.
-cp pipreq.txt webapp/.
-cp README.md webapp/.
+mkdir $webapp
+cp -rf static $webapp/.
+cp -rf templates $webapp/.
+cp  CalculatorFlask.py $webapp/.
+cp CalculatorClass.py $webapp/.
+cp pipreq.txt $webapp/.
+cp README.md $webapp/.
 
