@@ -29,5 +29,7 @@ send "sudo apachectl start \r"
 expect "$ "
 send "sudo nohup python /var/www/html/calap/CalculatorFlask.py & \r"
 
+sleep 10
+
 expect "$ "
 send "\r exit \r"
