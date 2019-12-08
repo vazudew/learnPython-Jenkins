@@ -1,4 +1,5 @@
 #! /usr/bin/expect -f
+set timeout 6000
 
 set USER_S "jenkins"
 set HOST_S "3.125.118.211"
