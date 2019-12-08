@@ -26,15 +26,26 @@ agent any
 		stage('Deploy') {
 				steps {
 					sh 'echo "Deploy phase "'
+					sh 'sudo chmod 0755 sshexpectsCleanWS.sh'
+					sh 'sudo chmod 0755 scpexpects.sh'
+					sh 'sudo chmod 0755 sshexpectsAppRun.sh'
+					sh 'sudo chmod 0755 pack-webapp.sh'
+					
 					sh 'echo "create webapp packer"'
 					sh 'sudo chmod 0755 pack-webapp.sh'
-					sh 'sudo chmod 0755 sshexpects.sh'
-					sh 'sudo chmod 0755 scpexpects.sh'
 					sh './pack-webapp.sh'
+
+					sh 'echo "clean workspace of webserver"'
+					sh './shexpectsCleanWS.sh'
+
 					sh 'echo "try to ssh and copy artefacts into deployment server"'
 					sh './scpexpects.sh'
 					sh 'set'
-					sh './sshexpects.sh'
+
+					sh 'echo "execute the webserver and app"'
+					sh './sshexpectsAppRun.sh'
+
+					
 			 }
 		}
 	}
