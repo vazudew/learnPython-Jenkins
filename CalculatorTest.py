@@ -34,8 +34,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(tempCalculatorObject.runOperation(), -488)
 
     def test_runOperationExponent(self):
-        tempCalculatorObject = CalculatorClass(12, 0, "**")
-        self.assertEqual(tempCalculatorObject.runOperation(), 1)
+        tempCalculatorObject = CalculatorClass(12, 1, "**")
+        self.assertEqual(tempCalculatorObject.runOperation(), 12)
 
     def test_runOperationModulo(self):
         tempCalculatorObject = CalculatorClass(12, 500, "%")
