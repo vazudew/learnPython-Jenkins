@@ -29,9 +29,10 @@ agent any
 					sh 'echo "create webapp packer"'
 					sh 'sudo chmod 0755 pack-webapp.sh'
 					sh 'sudo chmod 0755 sshexpects.sh'
+					sh 'sudo chmod 0755 scpexpects.sh'
 					sh './pack-webapp.sh'
 					sh 'echo "try to ssh and copy artefacts into deployment server"'
-					sh 'scp  -r /var/lib/jenkins/workspace/webapp/calap/ jenkins@3.125.118.211:/home/jenkins/.'
+					sh './scpexpects.sh'
 					sh 'set'
 					sh './sshexpects.sh'
 			 }
