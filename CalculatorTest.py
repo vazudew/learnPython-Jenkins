@@ -33,6 +33,14 @@ class MyTestCase(unittest.TestCase):
         tempCalculatorObject = CalculatorClass(12, 500, "-")
         self.assertEqual(tempCalculatorObject.runOperation(), -488)
 
+    def test_runOperationExponent(self):
+        tempCalculatorObject = CalculatorClass(12, 0, "**")
+        self.assertEqual(tempCalculatorObject.runOperation(), 1)
+
+    def test_runOperationModulo(self):
+        tempCalculatorObject = CalculatorClass(12, 500, "%")
+        self.assertEqual(tempCalculatorObject.runOperation(), 12)
+
 def suite():
     suite = unittest.TestSuite()
     suite.addTest(MyTestCase('test_init'))
@@ -41,6 +49,8 @@ def suite():
     suite.addTest(MyTestCase('test_runOperationZeroDivision'))
     suite.addTest(MyTestCase('test_runOperationMultiplication'))
     suite.addTest(MyTestCase('test_runOperationNegativeSubtraction'))
+    suite.addTest(MyTestCase('test_runOperationExponent'))
+    suite.addTest(MyTestCase('test_runOperationModulo'))
     return suite
 
 if __name__ == '__main__':

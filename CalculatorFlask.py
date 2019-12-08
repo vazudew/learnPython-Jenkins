@@ -7,7 +7,9 @@ switcher = {
     "add" : "+",
     "sub" : "-",
     "mul" : "*",
-    "div" : "/"
+    "div" : "/",
+    "exp" : "**",
+    "mod" : "%"
     }
 
 @app.route('/init',methods = ['POST', 'GET'])

@@ -15,7 +15,9 @@ class CalculatorClass:
             '+': self.item1 + self.item2,
             '-': self.item1 - self.item2,
             '*': self.item1 * self.item2,
-            '/': self.item1 / self.item2
+            '/': self.item1 / self.item2,
+            '**': self.item1 ** self.item2,
+            '%': self.item1 % self.item2,
         }
         return switcher.get(self.operator, "invalid output");
 
