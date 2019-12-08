@@ -8,4 +8,3 @@ spawn scp -r /var/lib/jenkins/workspace/webapp/calap/  $USER_S@$HOST_S:/home/jen
 expect "password: "
 send "hell123\r"
 expect "$ "
-send "exit\r"
