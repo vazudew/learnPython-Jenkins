@@ -1,11 +1,11 @@
 #! /usr/bin/expect -f
 
-user      = "jenkins"
-ipaddress = "3.125.118.211"
+set USER_S "jenkins"
+set HOST_S "3.125.118.211"
 
-spawn ssh $user@$ipaddress
+spawn ssh $USER_S@$HOST_S
 expect "password: "
-send "$JENKINS_PASS\r"
+send "hell123\r"
 expect "$ "
 send "ls -la\r"
 expect "$ "
