@@ -14,7 +14,7 @@ expect " password for jenkins:"
 send "hell123\r"
 
 expect "$ "
-send "sudo ps aux | grep -ie Flask | awk '{print \$2}' | xargs kill -9\r"
+send "sudo pkill -f /var/www/html/calap/CalculatorFlask.py\r"
 
 
 expect "$ "
@@ -27,7 +27,7 @@ expect "$ "
 send "sudo apachectl start \r"
 
 expect "$ "
-send "sudo nohup python /var/www/html/calap/CalculatorFlask.py & \r\r"
+send "sudo nohup python /var/www/html/calap/CalculatorFlask.py & \r"
 
 expect "$ "
-send "exit\r"
+send "\r exit \r"
