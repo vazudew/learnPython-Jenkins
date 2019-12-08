@@ -14,10 +14,11 @@ agent any
 		stage('Test') {
 				steps {
 					sh 'echo "Test Phase"'
-					//sh 'pwd'
-					//sh 'ls -la'
-					//sh 'uname -a'
-					//sh 'ifconfig '
+					sh 'pwd'
+					sh 'ls -la'
+					sh 'uname -a'
+					sh 'ifconfig '
+					sh 'whoami '
 					sh 'python CalculatorTest.py'
 				}
 			}
