@@ -7,3 +7,5 @@ set HOST_S "3.125.118.211"
 spawn scp -r /var/lib/jenkins/workspace/webapp/calap/  $USER_S@$HOST_S:/home/jenkins/.
 expect "password: "
 send "hell123\r"
+expect "$ "
+send "exit\r"
