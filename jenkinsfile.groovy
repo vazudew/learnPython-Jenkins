@@ -25,7 +25,11 @@ agent any
 		stage('Deploy') {
 				steps {
 					sh 'echo "Deploy phase"'
-					sh '/var/lib/jenkins/script-self/exp1.sh'
+					sh 'echo "create webapp packer"'
+					sh './pack-webapp.sh'
+					sh 'echo "try to ssh into deployment server"'
+					sh 'set'
+					sh './sshexpects.sh'
 			 }
 		}
 	}
