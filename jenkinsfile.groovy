@@ -25,7 +25,7 @@ agent any
 
 		stage('Deploy') {
 				steps {
-					sh 'echo "Deploy phase"'
+					sh 'echo "Deploy phase "'
 					sh 'echo "create webapp packer"'
 					sh 'sudo chmod 0755 pack-webapp.sh'
 					sh 'sudo chmod 0755 sshexpects.sh'
