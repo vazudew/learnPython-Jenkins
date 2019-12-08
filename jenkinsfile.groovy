@@ -36,7 +36,7 @@ agent any
 					sh './pack-webapp.sh'
 
 					sh 'echo "clean workspace of webserver"'
-					sh './shexpectsCleanWS.sh'
+					sh './sshexpectsCleanWS.sh'
 
 					sh 'echo "try to ssh and copy artefacts into deployment server"'
 					sh './scpexpects.sh'
